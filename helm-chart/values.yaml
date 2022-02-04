@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: pkterraform/node-web-app
+  repository: raupadhyay/node-web-app
   tag: latest
   pullPolicy: IfNotPresent
 
