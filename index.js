@@ -4,12 +4,12 @@ const express = require('express');
 
 // Constants
 const PORT = 8080;
-const HOST = '0.0.0.0';
+const HOST = '127.0.0.1';
 
 // App
 const app = express();
 app.get('/', (req, res) => {
-  console.log('>>>>>>>>> inside main')
+  console.log('>>>>>>>>> inside app')
   res.send(JSON.parse("Hello world"));
   //res.send(JSON.parse('{"message": "Hello world"}'));
 });
