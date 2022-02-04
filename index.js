@@ -9,9 +9,17 @@ const HOST = '127.0.0.1';
 // App
 const app = express();
 app.get('/', (req, res) => {
+  let responseCode = 200;
   console.log('>>>>>>>>> inside app')
-  res.send(JSON.parse("Hello world"));
-  //res.send(JSON.parse('{"message": "Hello world"}'));
+  try{
+    JSON.parse("Hello world");
+    //JSON.parse('{"message": "Hello world"}');
+  }catch(e){
+    responseCode = 500;
+    console.log('Raw message --> \n', e.stack)
+    console.log('Stringfy One --> \n', JSON.stringify(e.stack));
+  }
+  res.sendStatus(responseCode);
 });
 
 app.listen(PORT, HOST);
